@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Developer Portfolio</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:"Segoe UI",sans-serif;
+            background:#0b0f1a;
+            color:#e6f1ff;
+        }
+
+        header{
+            text-align:center;
+            padding:70px 20px;
+            background: radial-gradient(circle at top,#111a33,#020617);
+            box-shadow:0 0 40px rgba(0,140,255,0.3);
+        }
+
+        h1{
+            font-size:42px;
+            color:#4cc9ff;
+            text-shadow:0 0 12px #4cc9ff,0 0 25px #4cc9ff;
+        }
+
+        header p{
+            font-size:18px;
+            opacity:0.9;
+        }
+
+        hr{
+            width:120px;
+            border:2px solid #00eaff;
+            box-shadow:0 0 15px #00eaff;
+            margin-top:20px;
+        }
+
+        section{
+            margin:30px;
+            padding:25px;
+            background:rgba(255,255,255,0.03);
+            border-radius:12px;
+            backdrop-filter: blur(6px);
+            border:1px solid rgba(0,200,255,0.2);
+            box-shadow:0 0 20px rgba(0,200,255,0.08);
+        }
+
+        h2{
+            color:#4cc9ff;
+            text-shadow:0 0 8px rgba(76,201,255,0.6);
+        }
+
+        a{
+            color:#00f5ff;
+            text-decoration:none;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:10px 18px;
+            margin-top:10px;
+            background:linear-gradient(90deg,#0066ff,#00eaff);
+            border-radius:6px;
+            color:white;
+            box-shadow:0 0 15px rgba(0,200,255,0.6);
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            transform:scale(1.05);
+            box-shadow:0 0 25px rgba(0,200,255,0.9);
+        }
+
+        footer{
+            text-align:center;
+            padding:30px;
+            opacity:0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>ANANYA R NAIK</h1>
+    <p>Frontend Developer | HTML • CSS • JavaScript</p>
+    <hr>
+    <p id="typing"></p>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>
+        I am a Computer Science student passionate about building modern web interfaces.
+        I enjoy creating responsive websites, UI designs and JavaScript-based tools.
+        Currently available for freelance opportunities and internships.
+    </p>
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <ul>
+        <li>HTML / CSS / JavaScript</li>
+        <li>Responsive Web Design</li>
+		<li>React</li>
+		<li>Python</li>
+        <li>GitHub</li>
+        <li>UI Development</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Projects</h2>
+
+    <p>
+    <b>Portfolio Website</b> – Personal developer site  
+    <br>
+    <a href="https://github.com/yourusername/portfolio" target="_blank">🔗 View Code</a>
+    </p>
+
+    <p>
+    <b>Digital Clock</b> – Real-time JS project  
+    <br>
+    <a href="https://github.com/ananyarnaik18/DIGITAL-CLOCK" target="_blank">🔗 View Code</a>
+    </p>
+	
+	 <p>
+    <b>Brain Rush</b> – Infinity Quiz
+    <br>
+    <a href="https://github.com/ananyarnaik18/BrainRush" target="_blank">🔗 View Code</a>
+    </p>
+
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <p>Email: parivarananya@gmail.com</p>
+    <a class="btn" href="mailto:parivarananya@gmail.com">Contact Me</a>
+</section>
+
+<footer>
+    <p> • Developer Portfolio</p>
+</footer>
+
+<script>
+let text="Building Interfaces • Writing Code • Solving Problems • Available for Freelance";
+let i=0;
+function type(){
+    if(i<text.length){
+        document.getElementById("typing").innerHTML+=text.charAt(i);
+        i++;
+        setTimeout(type,40);
+    }
+}
+type();
+</script>
+
+</body>
+</html>
