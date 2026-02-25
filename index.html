@@ -1,150 +1,208 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Developer Portfolio</title>
+<title>Neon Dev Portfolio</title>
 
-    <style>
-        body{
-            margin:0;
-            font-family:"Segoe UI",sans-serif;
-            background:#0b0f1a;
-            color:#e6f1ff;
-        }
+<style>
 
-        header{
-            text-align:center;
-            padding:70px 20px;
-            background: radial-gradient(circle at top,#111a33,#020617);
-            box-shadow:0 0 40px rgba(0,140,255,0.3);
-        }
+/* ===== BACKGROUND GRID ===== */
+body{
+    margin:0;
+    font-family: "Segoe UI", sans-serif;
+    color:white;
+    background:#020617;
+    overflow-x:hidden;
+}
 
-        h1{
-            font-size:42px;
-            color:#4cc9ff;
-            text-shadow:0 0 12px #4cc9ff,0 0 25px #4cc9ff;
-        }
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,.08) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-1;
+}
 
-        header p{
-            font-size:18px;
-            opacity:0.9;
-        }
+/* ===== HERO ===== */
+.hero{
+    text-align:center;
+    padding:110px 20px 70px;
+}
 
-        hr{
-            width:120px;
-            border:2px solid #00eaff;
-            box-shadow:0 0 15px #00eaff;
-            margin-top:20px;
-        }
+.hero h1{
+    font-size:56px;
+    background:linear-gradient(90deg,#00eaff,#4cc9ff,#8b5cf6);
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 6s linear infinite;
+}
 
-        section{
-            margin:30px;
-            padding:25px;
-            background:rgba(255,255,255,0.03);
-            border-radius:12px;
-            backdrop-filter: blur(6px);
-            border:1px solid rgba(0,200,255,0.2);
-            box-shadow:0 0 20px rgba(0,200,255,0.08);
-        }
+@keyframes shine{
+    0%{filter:hue-rotate(0deg);}
+    100%{filter:hue-rotate(360deg);}
+}
 
-        h2{
-            color:#4cc9ff;
-            text-shadow:0 0 8px rgba(76,201,255,0.6);
-        }
+.hero p{
+    opacity:0.8;
+    font-size:19px;
+}
 
-        a{
-            color:#00f5ff;
-            text-decoration:none;
-        }
+/* ===== CARD CONTAINER ===== */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
 
-        .btn{
-            display:inline-block;
-            padding:10px 18px;
-            margin-top:10px;
-            background:linear-gradient(90deg,#0066ff,#00eaff);
-            border-radius:6px;
-            color:white;
-            box-shadow:0 0 15px rgba(0,200,255,0.6);
-            transition:0.3s;
-        }
+/* ===== GLASS CARD ===== */
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(0,255,255,0.2);
+    backdrop-filter:blur(12px);
+    border-radius:18px;
+    padding:28px;
+    margin:30px 0;
+    box-shadow:0 0 25px rgba(0,255,255,0.08);
+    transition:.45s;
+}
 
-        .btn:hover{
-            transform:scale(1.05);
-            box-shadow:0 0 25px rgba(0,200,255,0.9);
-        }
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 45px rgba(0,255,255,0.25);
+}
 
-        footer{
-            text-align:center;
-            padding:30px;
-            opacity:0.7;
-        }
-    </style>
+.card h2{
+    color:#4cc9ff;
+    margin-bottom:15px;
+}
+
+/* ===== SKILL CHIPS ===== */
+.skills span{
+    display:inline-block;
+    padding:8px 14px;
+    margin:6px;
+    border-radius:999px;
+    background:linear-gradient(90deg,#0066ff,#00f5ff);
+    box-shadow:0 0 15px rgba(0,229,255,.6);
+    font-size:14px;
+}
+
+/* ===== PROJECT CARDS ===== */
+.project{
+    padding:18px;
+    margin:12px 0;
+    border-radius:12px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(0,255,255,.15);
+    transition:.35s;
+}
+
+.project:hover{
+    background:rgba(0,255,255,.07);
+    transform:scale(1.02);
+}
+
+a{
+    color:#00f5ff;
+    text-decoration:none;
+}
+
+a:hover{
+    text-shadow:0 0 10px #00f5ff;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    display:inline-block;
+    padding:12px 22px;
+    margin-top:10px;
+    border-radius:10px;
+    background:linear-gradient(90deg,#00eaff,#8b5cf6);
+    box-shadow:0 0 20px rgba(139,92,246,.7);
+    color:white;
+    transition:.35s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 35px rgba(139,92,246,1);
+}
+
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:40px;
+    opacity:.6;
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
+<div class="hero">
     <h1>ANANYA R NAIK</h1>
-    <p>Frontend Developer | HTML • CSS • JavaScript</p>
-    <hr>
+    <p>Frontend Developer • UI Engineer • React Enthusiast</p>
     <p id="typing"></p>
-</header>
+</div>
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        I am a Computer Science & Design student passionate about building modern web interfaces.
-        I enjoy creating responsive websites, UI designs and JavaScript-based tools.
-        Currently available for freelance opportunities and internships.
-    </p>
-</section>
+<div class="container">
 
-<section>
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML / CSS / JavaScript</li>
-        <li>Responsive Web Design</li>
-		<li>React</li>
-		<li>Python</li>
-        <li>GitHub</li>
-        <li>UI Development</li>
-    </ul>
-</section>
+    <div class="card">
+        <h2>About Me</h2>
+        <p>
+        Computer Science student passionate about building sleek, interactive interfaces.
+        I focus on clean UI, responsive layouts, and logic-driven applications.
+        </p>
+    </div>
 
-<section>
-    <h2>Projects</h2>
+    <div class="card">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Python</span>
+            <span>GitHub</span>
+        </div>
+    </div>
 
-    <p>
-    <b>Portfolio Website</b> – Personal developer site  
-    <br>
-    <a href="https://github.com/ananyarnaik18/portfolio" target="_blank">🔗 View Code</a>
-    </p>
+    <div class="card">
+        <h2>Projects</h2>
 
-    <p>
-    <b>Digital Clock</b> – Real-time JS project  
-    <br>
-    <a href="https://github.com/ananyarnaik18/DIGITAL-CLOCK" target="_blank">🔗 View Code</a>
-    </p>
-	
-	 <p>
-    <b>Brain Rush</b> – Infinity Quiz
-    <br>
-    <a href="https://github.com/ananyarnaik18/BrainRush" target="_blank">🔗 View Code</a>
-    </p>
+        <div class="project">
+            <b>Portfolio Website</b><br>
+            <a href="https://github.com/ananyarnaik18/Portfolio" target="_blank">View Code</a>
+        </div>
 
-</section>
+        <div class="project">
+            <b>Digital Clock</b><br>
+            <a href="https://github.com/ananyarnaik18/DIGITAL-CLOCK" target="_blank">View Code</a>
+        </div>
 
-<section>
-    <h2>Contact</h2>
-    <p>Email: parivarananya@gmail.com</p>
-    <a class="btn" href="mailto:parivarananya@gmail.com">Contact Me</a>
-</section>
+        <div class="project">
+            <b>Brain Rush Quiz</b><br>
+            <a href="https://github.com/ananyarnaik18/BrainRush" target="_blank">View Code</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Contact</h2>
+        <p>Email: parivarananya@gmail.com</p>
+        <a class="btn" href="mailto:parivarananya@gmail.com">Contact Me</a>
+    </div>
+
+</div>
 
 <footer>
-    <p> • Developer Portfolio</p>
+    Neon Portfolio • Built with HTML, CSS & JS
 </footer>
 
 <script>
-let text="Building Interfaces • Writing Code • Solving Problems • Available for Freelance";
+let text="Designing UI • Writing Code • Building Projects • Open for Internships";
 let i=0;
 function type(){
     if(i<text.length){
@@ -158,4 +216,3 @@ type();
 
 </body>
 </html>
-
